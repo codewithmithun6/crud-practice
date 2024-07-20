@@ -59,6 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             existingEmployee.setContact(updatedEmployee.getContact());
             existingEmployee.setAge(updatedEmployee.getAge());
             existingEmployee.setSalary(updatedEmployee.getSalary());
+            existingEmployee.setAadharCard(updatedEmployee.getAadharCard());
 //            existingEmployee.setAddresses(updatedEmployee.getAddresses()); // we can use this one also for update
             // below is better way to update address
             // Update addresses

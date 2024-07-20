@@ -1,10 +1,8 @@
 package com.codewithmithun.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -52,12 +50,16 @@ public class Employee {
     private String contact;
 
 
-    @NotBlank(message = "Salary is mandatory")
+//    @NotBlank(message = "Salary is mandatory")
     @Column(name = "salary")
-    private String salary;
+    private double salary;
 
     @Column(name = "email_id")
     private String emailId;
+
+    @Column(name = "aadhar_card")
+    private String aadharCard;
+
 
 
 //    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
