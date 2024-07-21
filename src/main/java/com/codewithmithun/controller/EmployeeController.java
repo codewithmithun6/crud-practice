@@ -1,6 +1,7 @@
 package com.codewithmithun.controller;
 
 import com.codewithmithun.DTO.AddressDTO;
+import com.codewithmithun.DTO.EmployeeDTO;
 import com.codewithmithun.entity.Employee;
 import com.codewithmithun.service.AddressService;
 import com.codewithmithun.service.EmployeeService;
@@ -34,6 +35,13 @@ public class EmployeeController {
     public String health(){
         log.info("Logger is working fine");
         return "Ok API is working fine.";
+    }
+
+    // save employee only without address
+    @PostMapping("/employee/only")
+    public EmployeeDTO createEmployeeWithoutAddress(@RequestBody EmployeeDTO employeeDTO){
+
+        return employeeService.createEmployeeWithoutAddress(employeeDTO);
     }
 
     // get all employee

@@ -1,6 +1,7 @@
 package com.codewithmithun.entity;
 
 
+
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
@@ -57,8 +58,8 @@ public class Employee {
     @Column(name = "email_id")
     private String emailId;
 
-    @Column(name = "aadhar_card")
-    private String aadharCard;
+    @Column(name = "aadhaar_card")
+    private String aadhaarCard;
 
 
 

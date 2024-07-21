@@ -1,6 +1,7 @@
 package com.codewithmithun.service;
 
 import com.codewithmithun.DTO.AddressDTO;
+import com.codewithmithun.DTO.EmployeeDTO;
 import com.codewithmithun.entity.Employee;
 
 
@@ -19,4 +20,5 @@ public interface EmployeeService {
     Employee addAddressToEmployee(Long employeeId, AddressDTO addressDTO);
     List<Employee> multipleSearchEmployees(String firstName, String lastName, String nickName, String emailId, String contact);
 
+    EmployeeDTO createEmployeeWithoutAddress(EmployeeDTO employeeDTO);
 }

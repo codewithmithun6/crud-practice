@@ -1,8 +1,10 @@
 package com.codewithmithun.service.impl;
 
 import com.codewithmithun.DTO.AddressDTO;
+import com.codewithmithun.DTO.EmployeeDTO;
 import com.codewithmithun.entity.Address;
 import com.codewithmithun.entity.Employee;
+import com.codewithmithun.mapper.EmployeeMapper;
 import com.codewithmithun.repository.EmployeeRepository;
 import com.codewithmithun.service.EmployeeService;
 import jakarta.transaction.Transactional;
@@ -59,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             existingEmployee.setContact(updatedEmployee.getContact());
             existingEmployee.setAge(updatedEmployee.getAge());
             existingEmployee.setSalary(updatedEmployee.getSalary());
-            existingEmployee.setAadharCard(updatedEmployee.getAadharCard());
+            existingEmployee.setAadhaarCard(EmployeeMapper.formatAadhaarNumber(updatedEmployee.getAadhaarCard()));
 //            existingEmployee.setAddresses(updatedEmployee.getAddresses()); // we can use this one also for update
             // below is better way to update address
             // Update addresses
@@ -108,6 +110,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> multipleSearchEmployees(String firstName, String lastName, String nickName, String emailId, String contact) {
         return employeeRepository.findByFirstNameOrLastNameOrNickNameOrEmailIdOrContact(firstName, lastName, nickName, emailId, contact);
+    }
+
+    @Override
+    public EmployeeDTO createEmployeeWithoutAddress(EmployeeDTO employeeDTO) {
+
+        Employee employee = EmployeeMapper.toEntity(employeeDTO);
+        Employee savedEmployee = employeeRepository.save(employee);
+        return EmployeeMapper.toDTO(savedEmployee);
     }
 
 
