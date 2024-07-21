@@ -15,7 +15,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 
 // multiple search
-    List<Employee> findByFirstNameOrLastNameOrNickNameOrEmailIdOrContact(String firstName, String lastName, String nickName, String emailId, String contact);
+    List<Employee> findByFirstNameOrLastNameOrNickNameOrEmailIdOrContactOrAadhaarCard(String firstName, String lastName, String nickName, String emailId, String contact,String aadhaarCard);
 
 
 

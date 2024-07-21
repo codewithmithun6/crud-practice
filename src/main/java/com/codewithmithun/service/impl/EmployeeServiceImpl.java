@@ -108,8 +108,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> multipleSearchEmployees(String firstName, String lastName, String nickName, String emailId, String contact) {
-        return employeeRepository.findByFirstNameOrLastNameOrNickNameOrEmailIdOrContact(firstName, lastName, nickName, emailId, contact);
+    public List<Employee> multipleSearchEmployees(String firstName, String lastName, String nickName, String emailId, String contact,String aadhaarCard) {
+        return employeeRepository.findByFirstNameOrLastNameOrNickNameOrEmailIdOrContactOrAadhaarCard(firstName, lastName, nickName, emailId, contact,aadhaarCard);
     }
 
     @Override

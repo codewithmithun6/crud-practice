@@ -18,7 +18,7 @@ public interface EmployeeService {
     Employee updateEmployee(Long empId, Employee updatedEmployee);
     List<Employee> findByContact(String contact);
     Employee addAddressToEmployee(Long employeeId, AddressDTO addressDTO);
-    List<Employee> multipleSearchEmployees(String firstName, String lastName, String nickName, String emailId, String contact);
+    List<Employee> multipleSearchEmployees(String firstName, String lastName, String nickName, String emailId, String contact,String aadhaarCard);
 
     EmployeeDTO createEmployeeWithoutAddress(EmployeeDTO employeeDTO);
 }

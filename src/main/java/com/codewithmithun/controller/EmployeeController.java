@@ -100,8 +100,9 @@ public class EmployeeController {
             @RequestParam(required = false) String lastName,
             @RequestParam(required = false) String nickName,
             @RequestParam(required = false) String emailId,
-            @RequestParam(required = false) String contact ) {
-        return employeeService.multipleSearchEmployees(firstName, lastName, nickName, emailId, contact);
+            @RequestParam(required = false) String contact,
+            @RequestParam(required = false) String aadhaarCard ) {
+        return employeeService.multipleSearchEmployees(firstName, lastName, nickName, emailId, contact,aadhaarCard);
     }
 
 //    // find by address by city or state
